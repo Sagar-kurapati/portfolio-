@@ -1,0 +1,119 @@
+/* ============================================
+   DOCK NAVIGATION - STICKY BOTTOM PILL
+   ============================================ */
+
+.dock-nav {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+}
+
+.dock-nav__pill {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e8e8e0;
+  border-radius: 50px;
+  padding: 6px 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.dock-nav__btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.25s ease, box-shadow 0.3s ease;
+  position: relative;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  padding: 0;
+}
+
+.dock-nav__icon {
+  font-size: 1.15rem;
+  color: #999;
+  transition: color 0.3s ease;
+  line-height: 1;
+  user-select: none;
+}
+
+/* Hover */
+.dock-nav__btn:hover {
+  background: #f0f0ea;
+  transform: translateY(-2px);
+}
+
+.dock-nav__btn:hover .dock-nav__icon {
+  color: #555;
+}
+
+/* Active */
+.dock-nav__btn--active {
+  background: var(--accent) !important;
+  box-shadow: 0 4px 16px rgba(200, 230, 53, 0.4);
+}
+
+.dock-nav__btn--active .dock-nav__icon {
+  color: #0a0a0a !important;
+}
+
+.dock-nav__btn--active:hover {
+  background: var(--accent-hover) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(200, 230, 53, 0.5);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .dock-nav {
+    bottom: 16px;
+  }
+
+  .dock-nav__pill {
+    padding: 4px 6px;
+    gap: 2px;
+  }
+
+  .dock-nav__btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .dock-nav__icon {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dock-nav {
+    bottom: 12px;
+  }
+
+  .dock-nav__pill {
+    padding: 3px 5px;
+    gap: 1px;
+  }
+
+  .dock-nav__btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .dock-nav__icon {
+    font-size: 0.85rem;
+  }
+}
